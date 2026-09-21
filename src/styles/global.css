@@ -1,0 +1,160 @@
+:root {
+  --bg: #0e1116;
+  --bg-panel: #161b22;
+  --bg-panel-2: #1c222b;
+  --border: #2a3240;
+  --border-strong: #3a4657;
+  --text: #e6edf3;
+  --text-dim: #9aa7b8;
+  --text-faint: #6b7889;
+  --accent: #4a9eff;
+  --accent-2: #35c8a4;
+  --warn: #e6a23c;
+  --danger: #f56c6c;
+  --radius: 8px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC',
+    'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+#app {
+  height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  font-weight: 600;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+code {
+  padding: 1px 5px;
+  border-radius: 4px;
+  background: #222a35;
+  color: #b7c8dc;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+  font-size: 0.9em;
+}
+
+button {
+  font-family: inherit;
+  font-size: 13px;
+  color: var(--text);
+  background: var(--bg-panel-2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+button:hover:not(:disabled) {
+  background: #232c38;
+  border-color: var(--border-strong);
+}
+
+button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+button.primary {
+  background: #1c4f8a;
+  border-color: #2a6cb8;
+}
+
+button.primary:hover:not(:disabled) {
+  background: #215da1;
+}
+
+button.active {
+  background: #1c4f8a;
+  border-color: var(--accent);
+  color: #fff;
+}
+
+select,
+input[type='number'] {
+  font-family: inherit;
+  font-size: 13px;
+  color: var(--text);
+  background: var(--bg-panel-2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 5px 8px;
+  outline: none;
+}
+
+input[type='range'] {
+  accent-color: var(--accent);
+}
+
+/* ===== 通用布局件 ===== */
+
+.card {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+}
+
+.muted {
+  color: var(--text-dim);
+}
+
+.dim {
+  color: var(--text-faint);
+}
+
+.mono {
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* 滚动条 */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2c3542;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3a4657;
+}

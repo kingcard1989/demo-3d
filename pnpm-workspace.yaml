@@ -1,0 +1,7 @@
+# pnpm 10+ 默认不执行依赖的构建脚本，被拦截时 install 会直接以非零码退出
+# （本地与 CI 都受影响）。这里显式放行确实需要执行安装脚本的两个依赖：
+#   esbuild  —— 放置平台二进制
+#   vue-demi —— 切换 Vue 版本适配层（Pinia 依赖）
+allowBuilds:
+  esbuild: true
+  vue-demi: true
