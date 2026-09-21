@@ -466,10 +466,6 @@ watch(showCollisions, () => applyColors())
             {{ n.toLocaleString() }}
           </button>
         </div>
-        <p class="hint">
-          空间尺度随规模自动放大，填充率固定在 {{ (TARGET_FILL * 100).toFixed(0) }}%，
-          因此不同规模的加速比可直接横向比较。
-        </p>
       </section>
 
       <section class="block">
@@ -558,10 +554,6 @@ watch(showCollisions, () => applyColors())
             </tr>
           </tbody>
         </table>
-
-        <p class="hint">
-          取 {{ RUNS }} 轮中位数；八叉树耗时为建树 + 查询（暴力无预处理，这样才公平）。
-        </p>
       </section>
 
       <section v-if="result" class="block">

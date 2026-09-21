@@ -5,12 +5,7 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 const router = createRouter({
   history: createWebHashHistory(),
   routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: () => import('@/views/HomeView.vue'),
-      meta: { title: '首页' },
-    },
+    { path: '/', redirect: '/octree' },
     {
       path: '/octree',
       name: 'octree',
@@ -23,14 +18,14 @@ const router = createRouter({
       component: () => import('@/views/MeasureDemo.vue'),
       meta: { title: '3D 测量' },
     },
-    { path: '/:pathMatch(.*)*', redirect: '/' },
+    { path: '/:pathMatch(.*)*', redirect: '/octree' },
   ],
   scrollBehavior: () => ({ top: 0 }),
 })
 
 router.afterEach(to => {
   const title = (to.meta.title as string) || ''
-  document.title = title ? `${title} · 技术展示` : '技术展示'
+  document.title = title ? `${title} · 3D 可视化技术展示` : '3D 可视化技术展示'
 })
 
 export default router

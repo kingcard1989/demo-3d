@@ -4,8 +4,8 @@ import { computed } from 'vue'
 
 const route = useRoute()
 
+// 两个演示互相切换
 const navItems = [
-  { to: '/', label: '首页' },
   { to: '/octree', label: '八叉树碰撞检测' },
   { to: '/measure', label: '3D 测量' },
 ]
@@ -19,8 +19,8 @@ const isFullBleed = computed(() => route.path === '/octree' || route.path === '/
     <header class="topbar">
       <div class="brand">
         <span class="dot" />
-        <strong>技术展示</strong>
-        <span class="dim">3D 可视化 · 空间索引</span>
+        <strong>3D 可视化技术展示</strong>
+        <span class="dim">从实习项目截取的代码片段做成的 demo</span>
       </div>
 
       <nav>
@@ -37,9 +37,7 @@ const isFullBleed = computed(() => route.path === '/octree' || route.path === '/
     </header>
 
     <main class="content">
-      <RouterView v-slot="{ Component }">
-        <component :is="Component" />
-      </RouterView>
+      <RouterView />
     </main>
   </div>
 </template>
@@ -85,26 +83,29 @@ const isFullBleed = computed(() => route.path === '/octree' || route.path === '/
 
 nav {
   display: flex;
-  gap: 4px;
+  gap: 6px;
 }
 
 .nav-link {
-  padding: 6px 14px;
+  padding: 7px 18px;
+  border: 1px solid var(--border);
   border-radius: 6px;
+  background: var(--bg-panel-2);
   color: var(--text-dim);
   font-size: 13px;
   text-decoration: none;
-  transition: background 0.15s, color 0.15s;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
 }
 
 .nav-link:hover {
-  background: var(--bg-panel-2);
   color: var(--text);
+  border-color: var(--accent);
   text-decoration: none;
 }
 
 .nav-link.active {
   background: #1c4f8a;
+  border-color: #1c4f8a;
   color: #fff;
 }
 

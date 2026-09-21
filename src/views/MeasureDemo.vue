@@ -306,7 +306,7 @@ onBeforeUnmount(() => {
             <button class="icon" title="删除该标注" @click="removeAnnotation(ann.id)">✕</button>
           </li>
         </ul>
-        <p v-else class="empty">还没有标注。左键点选几何元素开始测量。</p>
+        <p v-else class="empty">左键点选几何元素开始测量</p>
 
         <div class="actions">
           <button :disabled="!designStore.canUndo" @click="undo">撤销</button>
@@ -315,24 +315,6 @@ onBeforeUnmount(() => {
       </section>
 
       <section class="block">
-        <h3>拾取规则</h3>
-        <ul class="rules">
-          <li><strong>点</strong>：优先吸附到包络盒顶点</li>
-          <li><strong>边</strong>：其次吸附到最近棱边</li>
-          <li><strong>面</strong>：最后落到表面交点，并记录面法线</li>
-        </ul>
-        <p class="hint">
-          吸附阈值按屏幕像素给定（顶点 14px / 棱边 10px），再按相机视口高度换算成世界距离，
-          因此镜头拉远拉近时手感一致。
-        </p>
-      </section>
-
-      <section class="block">
-        <h3>场景</h3>
-        <p class="hint">
-          3 块舱板 + 10 台设备，单位为毫米。组件以包络盒参与测量，
-          面上取点即为包络面 —— 与工程项目中的简化包络显示一致。
-        </p>
         <div class="toggles">
           <label>
             <input
@@ -548,21 +530,6 @@ onBeforeUnmount(() => {
   grid-template-columns: 1fr 1fr;
   gap: 8px;
   margin-top: 12px;
-}
-
-.rules {
-  margin: 0;
-  padding-left: 18px;
-  font-size: 12.5px;
-  color: var(--text-dim);
-}
-
-.rules li {
-  margin-bottom: 5px;
-}
-
-.rules strong {
-  color: var(--text);
 }
 
 .toggles {

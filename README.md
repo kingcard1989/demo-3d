@@ -61,14 +61,13 @@
 `Octree.ts` 另有 18 行新增的 `collectNodes()` 只读遍历方法——原实现不暴露内部节点，
 演示需要把树结构画出来才补的，已在源码中标注「Demo 新增」，与算法本身无关。
 
-### 新写的适配层（2474 行）
+### 新写的适配层（2272 行）
 
 | 路径 | 行数 | 说明 |
 | --- | ---: | --- |
 | `src/views/OctreeDemo.vue` | 782 | 八叉树演示页：数据生成、两种算法对比、实例化渲染、树线框 |
 | `src/views/MeasureDemo.vue` | 582 | 测量演示页：场景搭建、事件接线、工具栏、标注列表 |
 | `src/engine/Viewer.ts` | 265 | 精简引擎：场景/相机/渲染器/轨道控制/事件转发 |
-| `src/views/HomeView.vue` | 202 | 首页 |
 | `src/engine/SatelliteSceneManager.ts` | 180 | 精简场景管理器：按数据生成包络盒，提供拾取目标 |
 | `src/stores/demoStores.ts` | 105 | DesignStore / EditorStore 的最小实现（+ 撤销栈） |
 | `src/data/demoScene.ts` | 109 | 演示场景数据 |
